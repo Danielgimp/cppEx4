@@ -8,13 +8,10 @@ TEACHER_SOURCES := Demo.cpp TestCounter.cpp Test.cpp
 STUDENT_SOURCES := $(filter-out $(TEACHER_SOURCES), $(wildcard *.cpp))
 STUDENT_OBJECTS := $(subst .cpp,.o,$(STUDENT_SOURCES))
 
-run: demo
+run: test
 	./$^
 
-demo: Demo.o $(STUDENT_OBJECTS)
-	$(CXX) $(CXXFLAGS) $^ -o demo
-
-test: TestCounter.o Test.o $(STUDENT_OBJECTS)
+test: Test_amichai.o Test_oriane_yirat.o TestRunner.o $(STUDENT_OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o test
 
 %.o: %.cpp $(HEADERS)

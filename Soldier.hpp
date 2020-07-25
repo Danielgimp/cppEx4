@@ -7,12 +7,11 @@ namespace WarGame {
 
     class Board;
 
-    class Soldier {
-        //change to private
-    private:
-        int health_points;
-        int damage_per_activity;
+    class Soldier {    
+    
     public:
+		int damage_per_activity;
+		int health_points;
         const int MaxHealth; // ToSave Soldier MaxHealth - for healing..
     public:
         int playerNum;
